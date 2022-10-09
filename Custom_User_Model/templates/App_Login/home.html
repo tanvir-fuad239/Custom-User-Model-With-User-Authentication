@@ -1,0 +1,32 @@
+{% extends 'navbar.html' %}
+
+{% block title_block %} {{ title }} {% endblock title_block %}
+
+{% block body_block %}
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+
+    {% endif %}
+
+    <div class="container m-auto my-5 shadow p-5 w-50 text-center">
+        <h4>User Information: </h4>
+        <br>
+        <p>First Name : <b>{{ user.first_name }}</b></p>
+        <p>Last Name : <b>{{ user.last_name }}</b></p>
+        <p>Email Address : <b>{{ user.email }}</b></p>
+        <p>Phone number : <b>{{ user.phone }}</b></p>
+        <p>Date of Birth : <b>{{ user.date_of_birth }}</b></p>
+        <p>Address : <b>{{ user.address }}</b></p>
+        <p>Country : <b>{{ user.country }}</b></p>
+        <p>Zipcode : <b>{{ user.zipcode }}</b></p>
+
+    </div>
+
+
+{% endblock body_block %}
